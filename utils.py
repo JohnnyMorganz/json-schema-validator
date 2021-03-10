@@ -50,8 +50,11 @@ def request(verb, url, data=None):
 
 
 def json_from_file(file_path):
-    with open(file_path) as f:
-        return json.load(f)
+    try:
+        with open(file_path) as f:
+            return json.load(f)
+    except OSError: # File was deleted
+        return None
 
 
 def validate_file(json_schema, path_pattern, file_path):
@@ -60,11 +63,12 @@ def validate_file(json_schema, path_pattern, file_path):
         print('validating {}'.format(file_path))
         schema = json_from_file(json_schema)
         instance = json_from_file(file_path)
+        if instance is None: # File was deleted
+            return []
 
         validator = Draft7Validator(schema)
         return sorted(validator.iter_errors(instance), key=str)
     else:
-        print('{} doesn\'t match pattern {}'.format(file_path, path_pattern))
         return []
 
 
