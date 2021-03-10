@@ -1,6 +1,6 @@
-# JSON Schema Validator
+# RSI Validator
 
-A Github Action for validating JSON using specified JSON schema.
+A Github Action for validating [RSI](https://github.com/space-wizards/RSI.py/blob/master/spec/RSI.md) metadata for [Space Station 14](https://github.com/space-wizards/space-station-14). Forked from [snapcart/json-schema-validator](https://github.com/snapcart/json-schema-validator).
 
 ## How to use it?
 
