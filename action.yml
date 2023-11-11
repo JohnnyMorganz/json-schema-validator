@@ -1,5 +1,5 @@
-name: Space Station 14 RSI Validator
-description: Validates RSI metadata for Space Station 14.
+name: Json Schema Validator
+description: Validates JSON schema
 runs:
   using: docker
   image: Dockerfile
