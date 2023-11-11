@@ -1,4 +1,4 @@
-name: Json Schema Validator
+name: Validate my JSONs plz
 description: Validates JSON schema
 runs:
   using: docker
